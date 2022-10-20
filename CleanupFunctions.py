@@ -19,7 +19,6 @@ def remove_stopword(text):
     a=[w for w in nltk.word_tokenize(text) if w not in stopword]
     return ' '.join(a)
 
-
     # Bron: https://datapeaker.com/big-data/integre-r-tableau-y-excel/
 import nltk
 import string as st
