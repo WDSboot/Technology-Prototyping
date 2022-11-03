@@ -1,5 +1,6 @@
-
-
+import nltk
+import string as st
+import re
 
 # Converting all tweets to lowercase
 def convert_to_lowercase(text):
@@ -20,6 +21,3 @@ def remove_stopword(text):
     return ' '.join(a)
 
     # Bron: https://datapeaker.com/big-data/integre-r-tableau-y-excel/
-import nltk
-import string as st
-import re
