@@ -44,16 +44,24 @@ def print_graphs():
     # Waarden van de count sorteren op aflopende volgorde (hoogste aantal eerst) en alleen de top 30 laten zien van de count, 
     # bronnen: https://www.geeksforgeeks.org/how-to-sort-pandas-dataframe/
     # https://stackoverflow.com/a/43859466
-    mostCommonWords = dfWordSentiment.sort_values(by=['Count'], ascending=False).head(25)
-
+    mostCommonWords = dfWordSentiment.sort_values(by=['Count'], ascending=False).head(15)
+    print(mostCommonWords)
     # Bar maken, bron: https://towardsdatascience.com/very-simple-python-script-for-extracting-most-common-words-from-a-story-1e3570d0b9d0
     threshold_pos = 0.05
     threshold_neg = -0.05
-    mostCommonWords.plot.bar(x='Word',y='Compound', color='green')
+    mostCommonWords.plot.bar(x='Word',y='Compound',color='#5fb11b')
     # Grenslijnen, bron: https://www.folkstalk.com/tech/how-to-draw-threshold-line-in-bar-graph-python-with-code-examples/
     plt.axhline(y=threshold_pos, linewidth=1, color='black', linestyle ="--")
     plt.axhline(y=threshold_neg, linewidth=1, color='black', linestyle ="--")
+    plt.title("Most frequent words with sentiment score")
+    plt.xlabel("Words")
+    plt.ylabel("Compound score")
 
+    mostNegativeWords = dfWordSentiment[dfWordSentiment['Count'] >= 5].sort_values(by=['Compound'], ascending=True).head(15)
+    print(mostNegativeWords)
+    mostNegativeWords.plot.bar(x='Word',y='Compound',color='#5fb11b')
+    plt.title("Most negative words, used at least 5 times")
+    plt.xlabel("Words")
+    plt.ylabel("Compound score")
 
-    mostNegativeWords = dfWordSentiment.sort_values(by=['Compound'], ascending=True).head(10)
-    mostNegativeWords.plot.bar(x='Word',y='Compound',color='green')
+    
