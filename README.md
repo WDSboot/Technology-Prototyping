@@ -1,8 +1,8 @@
 # Technology-Prototyping
 Prototype TP
 
-Welkom in ons mooie project
+Welkom in ons mooie project.
 
-DataextractieZGV is uit google reviews ziekenhuis. Hiervan is Google Revierws ZGV No Empty de raw data en ReviewsZGVSentiment de bewerkte + sentiment.
+DataextractieZGV is uit Google reviews ziekenhuis. Hiervan is Google Reviews ZGV No Empty de raw data en ReviewsZGVSentiment de bewerkte met het sentiment.
 
-Idem voor mock up maar de mockup data is verzonnen door ons allen.
+Idem voor mock-up data, de mock-up data bestaat echter uit verzonnen recensies door ons allen.
