@@ -45,7 +45,7 @@ def print_graphs():
     # bronnen: https://www.geeksforgeeks.org/how-to-sort-pandas-dataframe/
     # https://stackoverflow.com/a/43859466
     mostCommonWords = dfWordSentiment.sort_values(by=['Count'], ascending=False).head(15)
-    print(mostCommonWords)
+    # print(mostCommonWords) --> mochten docenten dit willen zien bij de presentatie, dan kan dit uitgecomment worden
     # Bar maken, bron: https://towardsdatascience.com/very-simple-python-script-for-extracting-most-common-words-from-a-story-1e3570d0b9d0
     threshold_pos = 0.05
     threshold_neg = -0.05
@@ -58,7 +58,7 @@ def print_graphs():
     plt.ylabel("Compound score")
 
     mostNegativeWords = dfWordSentiment[dfWordSentiment['Count'] >= 5].sort_values(by=['Compound'], ascending=True).head(15)
-    print(mostNegativeWords)
+    # print(mostNegativeWords) --> mochten docenten dit willen zien bij de presentatie, dan kan dit uitgecomment worden
     mostNegativeWords.plot.bar(x='Word',y='Compound',color='#5fb11b')
     plt.title("Most negative words, used at least 5 times")
     plt.xlabel("Words")
